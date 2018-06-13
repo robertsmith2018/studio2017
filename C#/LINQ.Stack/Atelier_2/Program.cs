@@ -102,12 +102,12 @@ namespace Atelier_2
                          orderby emp.Hiredate
                          select emp;
 
-              foreach(var emp in req1)
+              foreach(var emp1 in req1)
               {
-                  Console.WriteLine(emp.Name + "\t" + emp.Hiredate) ;
+                  Console.WriteLine(emp1.Name + "\t" + emp1.Hiredate) ;
               }
               Console.ReadKey();
-              */
+             */
               //Second Question:
               /*
               var req2 = from emp in employees
