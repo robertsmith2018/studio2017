@@ -1,0 +1,1 @@
+ADO.NET Normal SQL Queries without Stored Procedures
