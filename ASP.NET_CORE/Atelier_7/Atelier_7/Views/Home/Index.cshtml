@@ -1,0 +1,27 @@
+﻿
+@* on declare un modele qui represente la liste des departements envoyés par l'action Index du controleutr Home *@
+@model IEnumerable<Atelier_7.Models.Department>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>Liste des départements</h2>
+    <ul>
+        @* on utilise le Model pour trouver les données de chaque Departement *@
+        @foreach(var d in Model)
+        {
+            <li>@Html.ActionLink(@d.Name, "EmployeesByDept", "Home", new { id = d.ID }) </li>
+        }
+    </ul>
+
+</body>
+</html>
