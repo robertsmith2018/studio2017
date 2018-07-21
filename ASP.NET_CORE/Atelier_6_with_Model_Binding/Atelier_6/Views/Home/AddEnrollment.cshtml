@@ -1,0 +1,52 @@
+﻿@model Atelier_6.Models.Enrollment
+
+@{
+    ViewData["Title"] = "AddEnrollment";
+}
+
+<h2>AddEnrollment</h2>
+
+<h4>Enrollment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddEnrollment">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="CourseID" class="control-label"></label>
+                <select asp-for="CourseID">
+                  @foreach (var c in ViewBag.courses)
+                  {
+                    <option value="@c.CourseID">@c.Title</option>
+                  }
+                </select>
+               
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="StudentID" value="@ViewBag.StudentID" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Grade" class="control-label"></label>
+                <select asp-for="Grade">
+                    <option value="0">A</option>
+                    <option value="1">B</option>
+                    <option value="2">C</option>
+                    <option value="3">D</option>
+                    <option value="4">F</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
